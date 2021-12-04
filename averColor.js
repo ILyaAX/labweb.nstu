@@ -10,8 +10,9 @@ function getAverageRGB(cover)
 			canvas=document.createElement('canvas'),
 			ctx=canvas.getContext('2d'),
 			width,
-			height
-			pixels;
+			height,
+			pixels
+			length;
 	
 	if(!ctx)
 	{
@@ -32,7 +33,8 @@ function getAverageRGB(cover)
 		return rgb;
 	}
 
-	console.log(pixels)
+	length=pixels.data.length;
+	console.log(length);
 
 }
 
