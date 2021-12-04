@@ -1,3 +1,14 @@
 window.addEventListener("load",function(){
-	this.alert("Hello!");
+	var picture=document.querySelector("#cover");
+	console(picture);
 });
+
+function getAverageRGB(cover)
+{
+
+}
+
+function makeShadow(picture)
+{
+
+}
