@@ -57,7 +57,7 @@ function makeShadow(picture)
 	prop='0 0 200px 75px rgb(';
 	prop+=rgb.r+',';
 	prop+=rgb.g+',';
-	prop+=rgb.b+',)';
+	prop+=rgb.b+')';
 
 	picture.style.boxShadow=prop;
 }
