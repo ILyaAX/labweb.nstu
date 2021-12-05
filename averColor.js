@@ -1,6 +1,5 @@
 window.addEventListener("load",function(){
 	var picture=document.querySelector("#cover");
-	//console.log(picture);
 	makeShadow(picture);
 });
 
@@ -27,7 +26,7 @@ function getAverageRGB(cover)
 
 	try
 	{
-		pixels=ctx.createImageData(0,0,width,height);
+		pixels=ctx.getImageData(0,0,width,height);
 	}
 	catch(e)
 	{
