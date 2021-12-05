@@ -11,8 +11,9 @@ function getAverageRGB(cover)
 			ctx=canvas.getContext('2d'),
 			width,
 			height,
-			pixels
-			length;
+			pixels,
+			length,
+			pixCount;
 	
 	if(!ctx)
 	{
@@ -34,11 +35,30 @@ function getAverageRGB(cover)
 	}
 
 	length=pixels.data.length;
-	console.log(length);
 
+	for(i=0; i+4 <= length; i+=4)
+	{
+		rgb.r += pixels.data[i];
+		rgb.g += pixels.data[i+1];
+		rgb.b += pixels.data[i+2];
+	}
+
+	pixCount=length/4;
+	rgb.r = ~~(rgb.r/pixCount);
+	rgb.g = ~~(rgb.g/pixCount);
+	rgb.b = ~~(rgb.b/pixCount);
+
+	return rgb;
 }
 
 function makeShadow(picture)
 {
 	var rgb=getAverageRGB(picture);
+	var prop;
+	prop='0 0 200px 75px rgb(';
+	prop+=rgb.r+',';
+	prop+=rgb.g+',';
+	prop+=rgb.b+',)';
+
+	picture.style.boxShadow=prop;
 }
