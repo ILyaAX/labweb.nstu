@@ -21,7 +21,7 @@
 
 <body class="wFull">
 	<div id="cover-bg">
-		<img id="cover" src="img/covers/gorizont.jpg" />
+		<img id="cover" src="img/covers/<?php echo $row['cover'];?>" />
 		<h2 class="artist-name">
 			Би-2
 		</h2>
