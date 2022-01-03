@@ -2,6 +2,7 @@
 	require_once('connection.php');
 
 	$query = $connection -> query("SELECT albums.title, albums.cover, artists.name, artists.description FROM albums JOIN artists ON albums.id_artist=artists.id WHERE albums.id='$_GET[id]'");
+	$row = $query -> fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +11,7 @@
 <head>
 	<meta name="viewport" content="
 	wight=device-wight, initial-scale=1">
-	<title>Album-tatle</title>
+	<title>Album-title</title>
 	<meta charset="utf-8">
 	<link href="css/style.css" rel="stylesheet">
 
@@ -31,7 +32,7 @@
 		Горизонт событий
 	</h1>
 	<p>
-		<?php echo $query['description'];?>
+		<?php echo $row['description'];?>
 	</p>
 	</div>	
 </body>
