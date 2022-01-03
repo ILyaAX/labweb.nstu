@@ -23,7 +23,7 @@
 	<div id="cover-bg">
 		<img id="cover" src="img/covers/<?php echo $row['cover'];?>" />
 		<h2 class="artist-name">
-			<?php echo $row['name'];?>Би-2
+			<?php echo $row['name'];?>
 		</h2>
 		<img class="arrow" src="img/angle-down-solid.png" />
 	</div>
