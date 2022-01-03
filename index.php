@@ -1,7 +1,7 @@
 <?php
 	require_once('connection.php');
 
-	$query = $connection -> query("SELECT albums.id, albums.title, albums.rating, albums.cover, artists.name FROM albums JOIN artists ON albums.id_artists=artists.id");
+	$query = $connection -> query("SELECT albums.id, albums.title, albums.rating, albums.cover, artists.name FROM albums JOIN artists ON albums.id_artists=artist.id");
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +22,12 @@
 		<input type="text" id="find-filed" placeholder="Поиск"></input>
 	</div>
 
-		<div id="albums" class="albums">
-			
-		<div class="album">
+	<div id="albums" class="albums">
+		<?php while ($row = $query -> fetch_assoc()) 
+		{ ?>
+			<div class="album">
 				<div class="album-image">
-					<a href="#">
+					<a href="albubs.php?id=<?php echo $row[id]; ?>">
 						<img src="img/covers/bohemian.jpg">
 					</a>
 				</div>
@@ -44,6 +45,7 @@
 					</a>
 				</h4>
 			</div>
-		</div>
+		<?php } ?>	
+	</div>
 </body>
 </html>
