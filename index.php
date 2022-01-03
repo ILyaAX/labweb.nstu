@@ -27,21 +27,21 @@
 		{ ?>
 			<div class="album">
 				<div class="album-image">
-					<a href="albubs.php?id=<?php echo $row[id]; ?>">
-						<img src="img/covers/bohemian.jpg">
+					<a href="albubs.php?id=<?php echo $row[id];?>">
+						<img src="img/covers/<?php echo $row[cover];?>">
 					</a>
 				</div>
-				<div class="rating r-4">
+				<div class="rating r-<?php echo $row[rating];?>">
 					
 				</div>
 				<h3>
-					<a href="#">
-						Bohemian Rapsody
+					<a href="albubs.php?id=<?php echo $row[id];?>">
+						<?php echo $row[title];?>
 					</a>
 				</h3>
 				<h4>
 					<a href="#">
-						 Queen
+						 <?php echo $row[name];?>
 					</a>
 				</h4>
 			</div>
