@@ -1,5 +1,5 @@
 <?php
-	$HOST="localhost";
+	$HOST="mardiadb";
 	$USER="labweb";
 	$PASSWORD="Uv4UgT2vfnAnQdYb";
 	$DB="labwebdb";
