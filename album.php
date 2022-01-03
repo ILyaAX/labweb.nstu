@@ -11,7 +11,7 @@
 <head>
 	<meta name="viewport" content="
 	wight=device-wight, initial-scale=1">
-	<title>Album-title</title>
+	<title><?php echo $row['title'];?></title>
 	<meta charset="utf-8">
 	<link href="css/style.css" rel="stylesheet">
 
@@ -23,13 +23,13 @@
 	<div id="cover-bg">
 		<img id="cover" src="img/covers/<?php echo $row['cover'];?>" />
 		<h2 class="artist-name">
-			Би-2
+			<?php echo $row['name'];?>Би-2
 		</h2>
 		<img class="arrow" src="img/angle-down-solid.png" />
 	</div>
 	<div class="w600">
 		<h1>
-		Горизонт событий
+		<?php echo $row['title'];?>
 	</h1>
 	<p>
 		<?php echo $row['description'];?>
