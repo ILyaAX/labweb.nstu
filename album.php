@@ -1,3 +1,9 @@
+<?php
+	require_once('connection.php');
+
+	$query = $connection -> query("SELECT albums.title, albums.cover, artists.name, artists.description FROM albums JOIN artists ON albums.id_artist=artists.id WHERE albums.id='$_GET[id]'");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -25,11 +31,7 @@
 		Горизонт событий
 	</h1>
 	<p>
-		Белорусско-российская рок-группа, образованная в 1988 году в 
-		Бобруйске. Основатели и бессменные участники - Шура Би-2 и 
-		Лева Би-2.  В состав команды также входят: Андрей Звонков, 
-		Макс Лакмус, Борис Лифшиц и Ян Николенко. В 2017 году Би-2 
-		завершили работу над десятым студийным альбомом "Горизонт событий".
+		<?php echo $query['description'];?>
 	</p>
 	</div>	
 </body>
